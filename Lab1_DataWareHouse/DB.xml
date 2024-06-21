@@ -1,0 +1,34 @@
+<Table name="Sale_1">
+<Field>Time_ID</Field>
+<Field>Product_ID</Field>
+<Field>Worker_ID</Field>
+<Field>Location_ID</Field>
+<Field>Quantity</Field>
+<Field>Price</Field>
+</Table>
+<Table name="Time_2">
+<Field>Time_ID</Field>
+<Field>Year</Field>
+<Field>Month</Field>
+<Field>Day</Field>
+<Field>LEVEL_</Field>
+</Table>
+<Table name="Product_3">
+<Field>Product_ID</Field>
+<Field>Product_Group</Field>
+<Field>Trademark</Field>
+<Field>Name</Field>
+<Field>LEVEL_</Field>
+</Table>
+<Table name="Worker_4">
+<Field>Worker_ID</Field>
+<Field>Surname</Field>
+<Field>Name</Field>
+</Table>
+<Table name="Location_5">
+<Field>Location_ID</Field>
+<Field>Region</Field>
+<Field>Town</Field>
+<Field>Name</Field>
+<Field>LEVEL_</Field>
+</Table>

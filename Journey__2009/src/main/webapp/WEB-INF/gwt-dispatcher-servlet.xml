@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	/* *************************************************************************
+	* 28.09.2007
+	*
+	* (C) 2007 Nile Project Inc. All rights reserved
+	*
+	* $Revision: 13121 $
+	* $Author: daves $
+	* $Date: 2008-11-18 23:28:56 +0200 (Вт, 18 ноя 2008) $
+	* **************************************************************************
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:annotation-config/>
+	<tx:annotation-driven/>
+<!-- Enables plain Controllers -->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
+   <!--  <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="order" value="0" />
+        <property name="mappings">
+            <value>
+                /sesame.doGWT=serviceController
+            </value>
+        </property>
+    </bean> -->
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/journey.gwt.SesameGWT/SesameGWT.html">sesamegwt</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="sesamegwt" class="journey.web.controller.gwt.SesameGWTController"/>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+		p:prefix="/WEB-INF/pages/gwt/" p:suffix=".html"/>
+
+</beans>

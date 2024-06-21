@@ -1,0 +1,1 @@
+@java -Xmx256M -cp "%~dp0\src;%~dp0\bin;D:/workspace/Journey/lib-gwt/gwt-user.jar;D:/workspace/Journey/lib-gwt/gwt-dev-windows.jar;D:/workspace/Journey/lib-gwt/gwt-servlet.jar" com.google.gwt.dev.GWTShell -out "%~dp0\WebContent" %* journey.gwt.SesameGWT/SesameGWT.html

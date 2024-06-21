@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+a {
+	color: #545454;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+label {
+	color: #818181;
+	font-size: 14px;
+	font-family: Helvetica, verdana, tahoma, serif;
+	float: left;
+	margin-right: 10px;
+	padding-top: 2px;
+	text-align: right;	
+	width: 140px;
+}
+
+legend {
+	color: #335ea8;
+	font-size: 18px;	
+	font-family: Times New Roman, Helvetica, verdana, tahoma, serif;
+}
+
+input:focus, input.sffocus, textarea:focus, textarea.sffocus2 {	
+	margin: 0px 0px 5px 0px;
+	border: 2px solid blue;
+	font-size: 12px;
+	font-family: verdana, tahoma, serif;
+}
+
+
+.addStr_{
+	color: #00b034;
+	font-size: 12px;
+	font-family: verdana, tahoma, serif;
+}
+
+
+.modifyProductForm_ {
+	width: 620px;
+	margin-left: 5px;
+	
+	color: #ef9c00;	
+	font-size: 12px;	
+	font-family: verdana, tahoma, serif;
+}
+
+.modifyProductForm_ input, .modifyProductForm_ textarea {
+	font-size: 12px;
+	font-family: verdana, tahoma, serif;
+	margin: 0px 0px 5px 0px;
+	padding: 2px;
+}
+
+.modifyProductForm_ textarea.textDescription {
+	width: 410px;
+}
+
+.modifyProductForm_ input.submit-button {
+	width: 110px;
+	margin-top: 12px;
+	margin-left: 150px;
+}
+

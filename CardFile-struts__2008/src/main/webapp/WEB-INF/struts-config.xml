@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ==== Form Bean Definitions ==== -->
+    <form-beans>    
+    	<!-- Main form bean -->
+    	<form-bean name="mainForm" type="forms.MainForm" />
+    	
+      	<form-bean name="addProductForm" type="forms.AddProductForm" /> 
+      	<form-bean name="deleteProductForm" type="forms.DeleteProductForm" /> 
+      	<form-bean name="editProductForm" type="forms.EditProductForm" />
+    </form-beans>
+    
+    
+	<!-- ==== Action Mapping Definitions ==== -->
+    <action-mappings>
+		<action path="/main" 
+		        scope="request"
+		        type="actions.MainAction"
+		        validate="true"
+		        name="mainForm"
+		        input="/MainJSP.jsp">		   
+			<forward name="success" path="/MainJSP.jsp" />
+		</action>	
+		
+		<action path="/add*"
+				scope="request"
+				type="actions.Add{1}Action"
+				validate="true"
+				name="add{1}Form"
+				input="/Modify{1}.jsp">
+			<forward name="success" path="/Modify{1}.jsp" />
+		</action>
+		<action path="/delete*"
+				scope="request"
+				type="actions.Delete{1}Action"
+				validate="true"
+				name="delete{1}Form"
+				input="/Modify{1}.jsp">
+			<forward name="success" path="/Modify{1}.jsp" />
+		</action>
+		<action path="/edit*"
+				scope="request"
+				type="actions.Edit{1}Action"
+				validate="true"
+				name="edit{1}Form"
+				input="/Modify{1}.jsp">
+			<forward name="success" path="/Modify{1}.jsp" />
+		</action>
+		
+	</action-mappings>
+	
+	
+	<!-- ==== Message Resources Definitions ==== -->
+	<message-resources parameter="MessageResources"/>
+	
+	
+	<!-- ===== Plug Ins Configuration ==== -->
+	<plug-in className="plugins.DataBaseConfigPlugIn">
+    </plug-in>	
+</struts-config>

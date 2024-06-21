@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color:#ffffff;
+}
+
+label {
+	color: #818181;
+	font-size: 14px;
+	font-family: Helvetica, verdana, tahoma, serif;
+	float: left;
+	margin-right: 10px;
+	padding-top: 2px;
+	text-align: right;	
+	width: 140px;
+}
+
+legend {
+	color: #335ea8;
+	font-size: 16px;	
+	font-family:  verdana, Helvetica, Times New Roman, tahoma, serif;
+}
+
+.logo_{	
+	width: 57px;
+	height: 62px;
+	background-image:url(img/Logo.jpg);
+	background-repeat:no-repeat;	
+	background-position: center center;
+}
+
+.title_{
+	color: #af662a;
+	font-family: verdana, tahoma, serif;
+	font-size: 12pt;
+}
+
+.address_{
+	color: green;
+	font-family: verdana, tahoma, serif;
+	font-size: 16pt;	
+	background-position: left center;
+	padding-left: 20px;
+}
+
+input:focus, input.sffocus, textarea:focus, textarea.sffocus2 {	
+	margin: 0px 0px 5px 0px;
+	border: 2px solid blue;
+	font-size: 12px;
+	font-family: verdana, tahoma, serif;
+}
+
+
+.addStr_{
+	color: #00b034;
+	font-size: 14px;
+	font-family: verdana, tahoma, serif;
+}
+
+
+.modifyForm_ {
+	width: 700px;
+	margin-left: 5px;
+	
+	color: #ef9c00;	
+	font-size: 14px;	
+	font-family: verdana, tahoma, serif;
+}
+
+.modifyForm_ input, .modifyForm_ textarea {
+	font-size: 14px;
+	font-family: verdana, tahoma, serif;
+	margin: 0px 0px 5px 0px;
+	padding: 2px;
+}
+
+.modifyForm_ textarea.textDescription {
+	width: 410px;
+}
+
+.modifyForm_ input.submit-button {
+	width: 110px;
+	margin-top: 12px;
+	margin-left: 150px;
+	
+	font-size: 14px;	
+	font-family: verdana, tahoma, serif;
+}
+

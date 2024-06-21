@@ -1,0 +1,43 @@
+
+.sesameGWT {
+	padding: 10px;
+	width: 95%;
+	height: 95%;
+}
+
+.leftPanel {
+	float: left;
+	height:750px;
+}
+
+.rightPanel {
+	float: left;
+	margin: 0px 15px;
+	width: 70%;	
+}
+
+.rightPanel textarea {
+	width: 100%;
+	height: 700px;
+	margin-top: 0px;
+}
+
+.cw-StackPanelHeader {
+	font-family: Verdana, sans-serif;
+	padding-left: 7px;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+.labelSuccess {
+	color: green;
+	font-weight:bold;
+	margin-left: 10px;
+}
+
+.flexTableHeader label{
+	color:#4E463F;
+	font-size:125%;
+	font-weight:bold;
+	text-align:center;
+}

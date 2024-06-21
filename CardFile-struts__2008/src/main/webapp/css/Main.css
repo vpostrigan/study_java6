@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+/*
+ * CardFile 3.0
+ * author: Postrigan V.A
+ */
+
+.content_{	
+	color: #a6d149;
+	font-size: 24px;
+	text-align: center;
+}
+
+.errorAttachment_{
+	color:red;
+	font-size: 10pt;
+}
+
+.attachment_{	
+	font-family: serif, verdana;
+	font-size: 10pt;
+}
+
+.logo_{
+	color: blue;
+	font-size: 24pt;
+	text-align: center;
+} 	
+
+.title_{
+	color: #af662a;
+	font-family: verdana, serif;
+	font-size: 12pt;
+}
+
+.errorLow_{
+	font-size: 11pt;
+}
+
+.search_{
+	width: 24px;
+	height: 24px;
+	background-image:url(img/find.gif);
+	background-repeat:no-repeat;	
+	background-position: center center;
+}
+
+.searchText_{	
+	font-family: verdana, serif;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.chunkSize_{
+	font-family: courier new, verdana, serif;
+	font-size: 11pt;
+}
+
+.evenRow_{
+	background-color:#ffffff;
+	font-family: verdana, serif;
+	font-size: 10pt;
+}
+	
+.oddRow_{
+	background-color:#eeeeee;
+	font-family: verdana, serif;
+	font-size: 10pt;
+}
+	
+.tableHeader_{
+	font-family: verdana, serif, tahoma;
+}
+
+.tableScrollSelected_ a {
+	color: #000000;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : none;
+}
+
+.tableScroll_ a {
+	color: #0048ff;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+.tableScroll_ a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+.tableShowString_{
+	font-family: tahoma, verdana, serif;
+	font-size: 10pt;	
+	text-align: right;
+}
+
+.linkPath_ a{
+	color: #545454;
+	font-family: tahoma, verdana, serif;
+	font-size: 14px;
+	text-decoration : underline;
+}
+
+.linkPath_ a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 14px;
+	text-decoration : underline;
+}
+	

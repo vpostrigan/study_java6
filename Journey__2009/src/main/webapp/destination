@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		 xml:base="http://localhost:8080/Journey/destination">
+
+	<rdfs:Class rdf:ID="Country"/>
+
+	<rdfs:Class rdf:ID="City">
+		<rdfs:subClassOf rdf:resource="#Country"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="TravelObjectType">
+		<rdfs:subClassOf rdf:resource="#City"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="TravelObject">
+		<rdfs:subClassOf rdf:resource="#TravelObjectType"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="Rating">
+		<rdfs:subClassOf rdf:resource="#TravelObject"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="Award">
+		<rdfs:subClassOf rdf:resource="#TravelObject"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="Attribute">
+		<rdfs:subClassOf rdf:resource="#TravelObject"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="Mark">
+		<rdfs:subClassOf rdf:resource="#Rating"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="Source">
+		<rdfs:subClassOf rdf:resource="#Rating"/>
+		<rdfs:subClassOf rdf:resource="#Award"/>
+		<rdfs:subClassOf rdf:resource="#Attribute"/>
+	</rdfs:Class>
+	
+	<rdfs:Class rdf:ID="Review">
+		<rdfs:subClassOf rdf:resource="#TravelObject"/>
+	</rdfs:Class>	
+
+	<rdfs:Class rdf:ID="Person"/>
+
+	<rdfs:Datatype rdf:about="&xsd;string"/>
+	<rdfs:Datatype rdf:about="&xsd;integer"/>
+	<rdfs:Datatype rdf:about="&xsd;decimal"/>
+
+	<rdf:Property rdf:ID="location">
+		<rdfs:domain rdf:resource="#Country"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:ID="longitude">
+		<rdfs:subPropertyOf rdf:resource="#location"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:ID="latitude">
+		<rdfs:subPropertyOf rdf:resource="#location"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="mapZoom">
+		<rdfs:subPropertyOf rdf:resource="#location"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="name">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="image">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="alt">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="transport">
+		<rdfs:domain rdf:resource="#City"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="address">
+		<rdfs:domain rdf:resource="#TravelObject"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="web_site">
+		<rdfs:domain rdf:resource="#TravelObject"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="telephone">
+		<rdfs:domain rdf:resource="#TravelObject"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="price">
+		<rdfs:domain rdf:resource="#TravelObject"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:ID="description">
+		<rdfs:domain rdf:resource="#TravelObject"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</rdf:Property>
+	
+	<rdf:Property rdf:ID="mark">
+		<rdfs:domain rdf:resource="#Marks"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</rdf:Property>
+
+</rdf:RDF>

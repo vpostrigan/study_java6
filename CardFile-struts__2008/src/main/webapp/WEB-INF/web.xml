@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>CardFile3</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<!-- Action Servlet Configuration -->
+    <servlet>
+    	<servlet-name>action</servlet-name>
+    	<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    	<init-param>
+    		<param-name>config</param-name>
+        	<param-value>/WEB-INF/struts-config.xml</param-value>
+    	</init-param>
+    	<load-on-startup>1</load-on-startup>
+    </servlet>
+
+
+    <!-- Action Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+    	<filter-name>SetCharacterEncodingFilter</filter-name>
+    	<filter-class>
+        	filters.SetCharacterEncodingFilter
+    	</filter-class>
+    	<init-param>
+        	<param-name>encoding</param-name>
+        	<param-value>UTF-8</param-value>
+    	 </init-param>
+	</filter>
+
+	<filter-mapping>
+    	<filter-name>SetCharacterEncodingFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

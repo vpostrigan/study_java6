@@ -1,0 +1,194 @@
+@CHARSET "UTF-8";
+/*
+ * Student 1.0
+ * author: Postrigan V.A
+ */
+
+body{
+	background-color:#ffffff;
+}
+	
+legend {
+	color: #335ea8;
+	font-size: 16px;	
+	font-family:  verdana, Helvetica, Times New Roman, tahoma, serif;
+}
+
+.logo_{	
+	width: 57px;
+	height: 62px;
+	background-image: url(img/Logo.jpg);
+	background-repeat: no-repeat;	
+	background-position: center center;
+}
+
+.address_{
+	color: green;
+	font-family: verdana, tahoma, serif;
+	font-size: 16pt;	
+	background-position: left center;
+	padding-left: 20px;
+}
+
+.title_{
+	color: #af662a;
+	font-family: verdana, tahoma, serif;
+	font-size: 12pt;
+}
+
+.menu_ {
+	color: #000000;
+	font-family: verdana, tahoma, serif;
+	font-size: 15px;	
+	list-style-image:url(img/pointer.jpg);	
+	padding-right: 8px;
+}
+
+.menu_ a{
+	color: #0000ff;
+	font-family: verdana, tahoma, serif;
+	font-size: 14px;	
+	list-style-image:url(img/pointer.png);	
+	padding-right: 8px;
+}
+
+.menu_ a:hover{
+	color: #006a25;
+	font-family: verdana, tahoma, serif;
+	font-size: 14px;
+	list-style-image:url(img/pointer.png);	
+	padding-right: 8px;
+	text-decoration: underline;
+}
+
+.textValueForum_{
+	font-family: verdana, tahoma, serif;
+	font-size: 12pt;
+}
+
+.textValue_{
+	font-family: verdana, tahoma, serif;
+	font-size: 11pt;
+}
+
+.tableHeader_{
+	background-color: #ffd595;
+	font-family: tahoma, verdana, serif;
+	font-size: 15px;
+}
+
+.myLabel_ {
+	color: #818181;
+	font-size: 14px;
+	font-family: Helvetica, verdana, tahoma, serif;
+	float: left;
+	margin-right: 10px;
+	padding-top: 2px;
+	text-align: right;
+	width: 125px;
+}
+
+.content_{	
+	color: #a6d149;
+	font-size: 24px;
+	text-align: center;
+}
+
+.errorAttachment_{
+	color:red;
+	font-size: 10pt;
+}
+
+.attachment_{	
+	font-family: serif, verdana;
+	font-size: 10pt;
+}
+
+.logo_{
+	color: blue;
+	font-size: 24pt;
+	text-align: center;
+} 	
+
+
+
+.errorLow_{
+	margin-left: 5px;
+	
+	color: #ef9c00;	
+	font-size: 14px;	
+	font-family: verdana, tahoma, serif;
+}
+
+.search_{
+	width: 24px;
+	height: 24px;
+	background-image:url(img/find.gif);
+	background-repeat:no-repeat;	
+	background-position: center center;
+}
+
+.searchText_{	
+	font-family: verdana, serif;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.chunkSize_{
+	font-family: courier new, verdana, serif;
+	font-size: 11pt;
+}
+
+.evenRow_{
+	background-color:#ffffff;
+	font-family: verdana, serif;
+	font-size: 10pt;
+}
+	
+.oddRow_{
+	background-color:#eeeeee;
+	font-family: verdana, serif;
+	font-size: 10pt;
+}
+
+.tableScrollSelected_ a {
+	color: #000000;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : none;
+}
+
+.tableScroll_ a {
+	color: #0048ff;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+.tableScroll_ a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+.tableShowString_{
+	font-family: tahoma, verdana, serif;
+	font-size: 10pt;	
+	text-align: right;
+}
+
+.linkPath_ a{
+	color: #545454;
+	font-family: tahoma, verdana, serif;
+	font-size: 14px;
+	text-decoration : underline;
+}
+
+.linkPath_ a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 14px;
+	text-decoration : underline;
+}
+	

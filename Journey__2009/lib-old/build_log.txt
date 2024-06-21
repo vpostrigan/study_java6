@@ -1,0 +1,37 @@
+
+D:\workspace_study\study_java6\Journey>SET JAVA_HOME=C:\Progra~1\Java\jdk1.8.0 
+
+D:\workspace_study\study_java6\Journey>SET JRE_HOME=C:\Progra~1\Java\jdk1.8.0\jre 
+
+D:\workspace_study\study_java6\Journey>SET Path=C:\Progra~1\Java\jdk1.8.0\bin;$PATH 
+Removing units with errors
+   [ERROR] Errors in 'jar:file:/D:/workspace_study/study_java6/Journey/lib-gwt/gwt-user.jar!/com/google/gwt/user/client/Random.java'
+      [ERROR] Line 1: The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenced from required .class files
+Exception in thread "main" org.eclipse.jdt.internal.compiler.problem.AbortCompilation
+	at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java:97)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java:154)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemReporter.handle(ProblemReporter.java:1727)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemReporter.isClassPathCorrect(ProblemReporter.java:3523)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.cacheMissingBinaryType(LookupEnvironment.java:178)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:52)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:97)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.getMemberType(BinaryTypeBinding.java:752)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.findMemberType(Scope.java:935)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getMemberType(Scope.java:2033)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getType(Scope.java:2221)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker$CheckingVisitor.findClass(LongFromJSNIChecker.java:188)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker$CheckingVisitor.getMethod(LongFromJSNIChecker.java:223)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker$CheckingVisitor.checkMethodRef(LongFromJSNIChecker.java:100)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker$CheckingVisitor.checkRefs(LongFromJSNIChecker.java:140)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker$CheckingVisitor.endVisit(LongFromJSNIChecker.java:63)
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.traverse(MethodDeclaration.java:247)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1222)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:518)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker.check(LongFromJSNIChecker.java:307)
+	at com.google.gwt.dev.javac.LongFromJSNIChecker.check(LongFromJSNIChecker.java:297)
+	at com.google.gwt.dev.javac.CompilationUnitInvalidator.validateCompilationUnits(CompilationUnitInvalidator.java:138)
+	at com.google.gwt.dev.javac.CompilationState.compile(CompilationState.java:123)
+	at com.google.gwt.dev.GWTCompiler.distill(GWTCompiler.java:327)
+	at com.google.gwt.dev.GWTCompiler.run(GWTCompiler.java:564)
+	at com.google.gwt.dev.GWTCompiler.run(GWTCompiler.java:554)
+	at com.google.gwt.dev.GWTCompiler.main(GWTCompiler.java:214)

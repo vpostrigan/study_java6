@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ==== Form Bean Definitions ==== -->
+    <form-beans>    
+    	<!-- Main form bean -->
+    	<form-bean name="loginForm" type="forms.LoginForm" />
+    	<form-bean name="mainForm" type="forms.MainForm" />
+    	<form-bean name="peopleForm" type="forms.PeopleForm" />
+    	<form-bean name="peoplePhoneForm" type="forms.PeoplePhoneForm" />
+    	<form-bean name="profileForm" type="forms.ProfileForm" />
+    	<form-bean name="messageForm" type="forms.MessageForm" />
+    	<form-bean name="resumeForm" type="forms.ResumeForm" />
+    	<form-bean name="resumeLookForm" type="forms.ResumeLookForm" />
+    	
+    	<form-bean name="taskConditionForm" type="forms.TaskConditionForm" />
+    	<form-bean name="solveTaskForm" type="forms.SolveTaskForm" />
+    	
+    	<form-bean name="forumChapterForm" type="forms.ForumChapterForm"/>
+    	<form-bean name="forumAuthoForm" type="forms.ForumAuthoForm"/>
+    	
+    	<form-bean name="addUserForm" type="forms.AddUserForm" />
+    	<form-bean name="deleteUserForm" type="forms.DeleteUserForm" />
+    	<form-bean name="editUserForm" type="forms.EditUserForm" />    	
+    	
+    	<!-- Change locale -->
+    	<form-bean name="changeLocaleForm" type="org.apache.struts.action.DynaActionForm">
+    		<form-property name="language" type="java.lang.String" />
+    	</form-bean>
+    </form-beans>
+    
+    
+	<!-- ==== Action Mapping Definitions ==== -->
+    <action-mappings>
+		<action path="/login" 
+		        scope="request"
+		        type="actions.LoginAction"
+		        validate="true"
+		        name="loginForm"
+		        input="/index.jsp">
+			<forward name="success" path="/main.do" />
+		</action>	
+		<action path="/main" 
+		        scope="request"
+		        type="actions.MainAction"
+		        validate="true"
+		        name="mainForm"
+		        input="/MainJSP.jsp">		   
+			<forward name="success" path="/MainJSP.jsp" />
+		</action>		
+		<action path="/people" 
+		        scope="request"
+		        type="actions.PeopleAction"
+		        validate="true"
+		        name="peopleForm"
+		        input="/User.jsp">		   
+			<forward name="success" path="/User.jsp" />
+		</action>
+		<action path="/peoplePhone" 
+		        scope="request"
+		        type="actions.PeoplePhoneAction"
+		        validate="true"
+		        name="peoplePhoneForm"
+		        input="/PeoplePhone.jsp">		   
+			<forward name="success" path="/PeoplePhone.jsp" />
+		</action>
+		<action path="/profile" 
+		        scope="request"
+		        type="actions.ProfileAction"
+		        validate="true"
+		        name="profileForm"
+		        input="/Profile.jsp">		   
+			<forward name="success" path="/Profile.jsp" />
+		</action>
+		<action path="/message" 
+		        scope="request"
+		        type="actions.MessageAction"
+		        validate="true"
+		        name="messageForm"
+		        input="/Message.jsp">		   
+			<forward name="success" path="/Message.jsp" />
+		</action>
+		<action path="/resume" 
+		        scope="request"
+		        type="actions.ResumeAction"
+		        validate="true"
+		        name="resumeForm"
+		        input="/Resume.jsp">		   
+			<forward name="success" path="/Resume.jsp" />
+		</action>
+		<action path="/resumeLook" 
+		        scope="request"
+		        type="actions.ResumeLookAction"
+		        validate="true"
+		        name="resumeLookForm"
+		        input="/ResumeLook.jsp">		   
+			<forward name="success" path="/ResumeLook.jsp" />
+		</action>
+		<action path="/taskCondition" 
+		        scope="request"
+		        type="actions.TaskConditionAction"
+		        validate="true"
+		        name="taskConditionForm"
+		        input="/TaskCondition.jsp">		   
+			<forward name="success" path="/TaskCondition.jsp" />
+		</action>
+		<action path="/solveTask" 
+		        scope="request"
+		        type="actions.SolveTaskAction"
+		        validate="true"
+		        name="solveTaskForm"
+		        input="/SolveTask.jsp">		   
+			<forward name="success" path="/SolveTask.jsp" />
+		</action>
+		<action path="/forumChapter" 
+		        scope="request"
+		        type="actions.ForumChapterAction"
+		        validate="true"
+		        name="forumChapterForm"
+		        input="/ForumChapter.jsp">		   
+			<forward name="success" path="/ForumChapter.jsp" />
+		</action>
+		<action path="/forumAutho" 
+		        scope="request"
+		        type="actions.ForumAuthoAction"
+		        validate="true"
+		        name="forumAuthoForm"
+		        input="/MainJSP.jsp">		   
+			<forward name="error" path="/main.do" />
+			<forward name="success" path="/forumChapter.do" />
+		</action>
+		
+		<action path="/ChangeLocale"
+				scope="request"
+				type="actions.ChangeLocaleAction"
+				validate="false"
+				name="changeLocaleForm"
+				input="/index.jsp">
+			<forward name="success" path="/index.jsp" />
+		</action>
+		
+		<action path="/add*"
+				scope="request"
+				type="actions.Add{1}Action"
+				validate="true"
+				name="add{1}Form"
+				input="/Modify{1}.jsp">
+			<forward name="success" path="/Modify{1}.jsp" />
+		</action>
+		<action path="/delete*"
+				scope="request"
+				type="actions.Delete{1}Action"
+				validate="true"
+				name="delete{1}Form"
+				input="/Modify{1}.jsp">
+			<forward name="success" path="/Modify{1}.jsp" />
+		</action>
+		<action path="/edit*"
+				scope="request"
+				type="actions.Edit{1}Action"
+				validate="true"
+				name="edit{1}Form"
+				input="/Modify{1}.jsp">
+			<forward name="success" path="/Modify{1}.jsp" />
+		</action>
+	</action-mappings>
+	
+	
+	<!-- === Max Upload size === -->
+	<controller maxFileSize="10M" />
+	
+	
+	<!-- ==== Message Resources Definitions ==== -->
+	<message-resources parameter="MessageResources"/>
+	
+	
+	<!-- ===== Plug Ins Configuration ==== -->
+	<plug-in className="plugins.DataBaseConfigPlugIn" />
+</struts-config>

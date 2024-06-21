@@ -1,0 +1,199 @@
+/* 
+- - - - - - - - - - - - - - - - - - - -
+
+Project:	Journey
+Author:		Postrigan V.A.
+
+[Table of contents]
+
+1. Body
+	2. Header / #header
+		2.1. Navigation / #navbar
+	3. Content / #content
+		3.1. Left column / #leftcolumn
+		3.2. Right column / #rightcolumn
+		3.3. Sidebar / #sidebar
+			3.3.1. RSS / #rss
+			3.3.2. Search / #search
+			3.3.3. Boxes / .box
+			3.3.4. Sideblog / #sideblog
+			3.3.5. Advertisements / .ads
+	4. Footer / #footer
+- - - - - - - - - - - - - - - - - - - -
+*/
+
+/*
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[1. Body]
+*/
+body {
+	background-color: #FFFFFF;	
+}
+
+/*
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[2. Header / #header]
+*/
+
+/*
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[3. Content / #content]
+*/
+
+a:hover, a:active {
+	//color: #0489B7;
+	text-decoration: underline;
+}
+
+a:link, a:visited {
+	//color: #0489B7;
+	text-decoration: none;
+}
+
+legend {
+	background:#FFFFFF none repeat scroll 0 0;
+	font-size: 1.5em;
+	color:#4E463F;
+	padding-right:5px;
+}
+
+fieldset label {
+	float: left;
+	color: #818181;
+	margin: 3px 10px 0px 0px;
+	text-align: right;	
+	width: 140px;
+}
+
+fieldset input {
+	margin: 3px 10px 0px 0px;
+}
+
+.button {
+	margin: 7px 0px 0px 150px;	
+}
+
+#content {
+	margin: 15px 25px;
+	font-family: Verdana, Arial, Tahoma, "Trebuchet MS", sans-serif;
+	font-size: 0.75em;
+	line-height: 1.5em;
+	
+}
+
+#content #logo {
+	float: left;
+	background-color: #FFFFFF;
+	background-image: url(../image/Journey.jpg);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: top left;
+	width: 312px;
+	height: 67px;
+}
+
+#content #menu {
+	float: right;
+	margin: 0 0 20px 0;
+	padding: 10px 0 0 0;
+	//line-height: 0em;
+}
+
+#content #menu #lang {
+	text-align: right;
+	margin: 0 0 5px 0;
+}
+
+#content #menu li {
+	display: inline;
+	font-size: 1.1em;
+}
+
+#content #menu li a {
+	color:#636365;
+	float:left;
+	margin:0 0 0 10px;
+	padding:2px 0 7px;
+	text-align:center;
+	width:87px;
+}
+
+#content #menu li a:hover {
+	background:#FFFFFF url(../image/button.gif) no-repeat scroll 0 0;
+}
+
+#content #menu li a.current {
+	background:#FFFFFF url(../image/button.gif) no-repeat scroll 0 0;
+}
+
+#content #menu li a.notCurrent {
+}
+
+#content #subMenu {
+	padding: 5px 5px;
+	background: #B2D281 none repeat scroll 0 0;	
+}
+
+#content #subMenu label {
+	color:#3B5D14;
+	//font-weight:bold;
+	margin-left: 10px;
+}
+
+#content #typies {
+	padding: 5px 5px;
+	background: #90B557 none repeat scroll 0 0;
+}
+
+#content #typies label {
+	color:#3B5D14;
+	font-weight:bold;
+	margin-left: 2px;
+}
+
+#content #travelObjects  {
+	float: left;
+	width: 50%;
+}
+
+#content #travelObjects label {
+	float: left;
+	color: #3B5D14;
+}
+
+#content #travelObjects .check{
+	padding: 5px 5px;
+	float: left;	
+}
+
+#content #travelObjects .evenRow_ {
+	float: left;
+	width: 50%;
+}
+
+#content #travelObjects .oddRow_ {
+	float: left;
+	background: #EEEEEE none repeat scroll 0 0;
+	width: 50%;
+}
+
+#content #mapLittle {
+	float: left;
+}
+
+
+/*
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[4. Footer]
+*/
+#footer {
+	margin: 25px 25px;
+	background: #EEEEEE none repeat scroll 0 0;
+	padding: 12px;	
+	font-family: Verdana, Arial, Tahoma, "Trebuchet MS", sans-serif;
+	font-size: 0.7em;
+	line-height: 1.5em;
+}
+
+
+

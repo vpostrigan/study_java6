@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+/*
+ * Student 1.0
+ * author: Postrigan V.A
+ */
+
+body{
+	background-color:#ffffff;
+}
+
+.logo_{	
+	width: 57px;
+	height: 62px;
+	background-image:url(img/Logo.jpg);
+	background-repeat:no-repeat;	
+	background-position: center center;
+}
+
+.title_{
+	color: #af662a;
+	font-family: verdana, tahoma, serif;
+	font-size: 12pt;
+}
+
+.address_{
+	color: green;
+	font-family: verdana, tahoma, serif;
+	font-size: 16pt;	
+	background-position: left center;
+	padding-left: 20px;
+}
+
+.modifyAddress_ a {
+	color: #545454;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+.modifyAddress_ a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+}
+
+.evenRow_{
+	background-color:#ffffff;
+	font-family: verdana, serif;
+	font-size: 11pt;
+}
+	
+.oddRow_{
+	background-color:#eeeeee;
+	font-family: verdana, serif;
+	font-size: 11pt;
+}
+
+.tableScrollSelected_ a {
+	color: #000000;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : none;
+	padding-left: 2px;
+}
+
+.tableScroll_ a {
+	color: #0048ff;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+	padding-left: 2px;
+}
+
+.tableScroll_ a:hover{
+	color: #006a25;
+	font-family: tahoma, verdana, serif;
+	font-size: 12px;
+	text-decoration : underline;
+	padding-left: 2px;
+}
+
+.tableHeader_{
+	background-color: #ffd595;
+	font-family: tahoma, verdana, serif;
+	font-size: 15px;
+}
+
+.chunkSize_{
+	font-family: courier new, verdana, serif;
+	font-size: 11pt;
+}
+
+.tableShowString_{
+	font-family: tahoma, verdana, serif;
+	font-size: 10pt;	
+	text-align: right;
+}

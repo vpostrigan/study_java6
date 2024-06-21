@@ -1,0 +1,96 @@
+<project name="journey" default="compile">	
+	
+	<!-- Properties -->
+	<property name="sesameGWT.home" value="WebContent/journey.gwt.SesameGWT" />
+	
+	
+	<!--<property name="build.classes" value="build/classes" />
+	<property name="core" value="com.eclipsesp.tplanner.core" />
+	<property name="jar.home" value="../${core}/build/jar" />
+	<property name="war.home" value="${build.classes}/war" />
+	<property name="www.WEB-INF.lib" value="www/WEB-INF/lib" />-->
+	
+	<!-- Build classpath -->
+	<!--<path id="classpath">
+		<fileset dir="${www.WEB-INF.lib}">
+		   	<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${www.WEB-INF.lib}/tomcat">
+			<include name="**/*.jar"/>
+		</fileset>
+		
+		<fileset dir="../${core}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="../${core}/lib-ant">
+	    	<include name="**/*.jar"/>
+	    </fileset>
+		<fileset dir="../${core}/lib-test">
+			<include name="**/*.jar"/>
+		</fileset>
+		
+		<fileset dir="${jar.home}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>-->
+	
+	<!-- Creation war-file -->
+	<!--<target name="createWar" depends="compile">
+		<war destfile="${war.home}/com.eclipsesp.tplanner.web.war" webxml="www/WEB-INF/web.xml">
+			<lib dir="../${core}/lib">
+				<exclude name="src/commons-dbcp-1.2.2-src.zip"/>
+				<exclude name="src/commons-logging-1.1.1-src.zip"/>
+				<exclude name="src/spring-sources.jar"/>
+				<exclude name="src/spring-webmvc-sources.jar"/>
+			</lib>
+			<lib dir="../${core}/lib-ant"/>
+			<lib dir="../${core}/lib-test">
+				<exclude name="src/spring-test-sources.jar"/>
+			</lib>
+			
+			<lib dir="${jar.home}"/>
+			
+			<lib dir="${www.WEB-INF.lib}">
+				<exclude name="tomcat/commons-el.jar"/>
+				<exclude name="tomcat/jasper-compiler.jar"/>
+				<exclude name="tomcat/jasper-compiler-jdt.jar"/>
+				<exclude name="tomcat/jasper-runtime.jar"/>
+				<exclude name="tomcat/jsp-api.jar"/>
+				<exclude name="tomcat/naming-factory.jar"/>
+				<exclude name="tomcat/naming-factory-dbcp.jar"/>
+				<exclude name="tomcat/naming-resources.jar"/>
+				<exclude name="tomcat/servlet-api.jar"/>
+			</lib>
+			
+			<classes dir="${build.classes}" />
+			
+			<fileset dir="www" excludes="WEB-INF/lib/**/*.jar" />
+		</war>
+	</target>-->
+	
+	<!-- Compiles the source code -->
+	<target name="compile" depends="prepare">
+		
+		<exec executable="SesameGWT-compile.cmd" output="build_log.txt" />
+		
+		<!--<javac srcdir="src" destdir="${build.classes}" debug="on" 
+				deprecation="on" optimize="off" includes="**">
+			<classpath refid="classpath"/>
+		</javac>
+		
+		<copy todir="${build.classes}">
+			<fileset dir="src" includes="**/*.properties" />
+		</copy>-->
+	</target>
+	
+	<!-- Prepares the build directory -->
+	<target name="prepare" depends="clean">
+		<mkdir dir="${sesameGWT.home}" />
+	</target>
+	
+	<!-- Cleans up generated stuff -->  
+	<target name="clean">
+		<delete dir="${sesameGWT.home}" />
+	</target>
+		
+</project>

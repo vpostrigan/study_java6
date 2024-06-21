@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+/*
+ * Student 1.0
+ * author: Postrigan V.A
+ */
+
+body{
+	background-color:#ffffff;
+}
+
+.logo_{	
+	width: 57px;
+	height: 62px;
+	background-image:url(img/Logo.jpg);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+.address_{
+	color: green;
+	font-family: verdana, tahoma, serif;
+	font-size: 16pt;	
+	background-position: left center;
+	padding-left: 20px;
+}
+
+.textStatic_{
+	font-family: verdana, tahoma, serif;
+	font-size: 11pt;
+}
+
+.textDynamic_{
+	font-family: verdana, tahoma, serif;
+	font-size: 12pt;
+	margin-left: 5px;	
+}
+
+.error_{
+	color: red;
+	font-size: 12pt;
+	font-family: verdana, tahoma, serif;	
+}
+
+.errorIncorrectValue_{
+	color: #ef9c00;	
+	font-size: 12px;	
+	font-family: verdana, tahoma, serif;	
+}
+
+input:focus, input.sffocus {	
+	border: 2px solid blue;
+}
+
+ 
