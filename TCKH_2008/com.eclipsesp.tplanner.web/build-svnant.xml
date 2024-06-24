@@ -1,0 +1,49 @@
+<project name="test" default="svn.test" basedir=".">
+	<property name="file" value="www/WEB-INF/release" />
+
+    <property name="source-root" value="target" />
+	<property name="repository.url" value="svn+ssh://svn.eclipsesp.com/TCKH/trunk/"/>
+	<property name="repository.url.core" value="svn+ssh://svn.eclipsesp.com/TCKH/trunk/com.eclipsesp.tplanner.core"/>
+	<property name="core" value="com.eclipsesp.tplanner.core" />
+	<property name="jar.home" value="../${core}/lib-antsvn" />
+	<property name="workingcopy" value="../temp" />
+
+	<property name="javahl" value="true"/>
+	
+     <path id="svnant.classpath"  >
+        <fileset dir="../com.eclipsesp.tplanner.core/lib-antsvn" >
+			<include name="*.jar"/>
+        </fileset>
+    </path> 
+
+    <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.classpath" />
+
+    <target name="svn.test" >
+
+		<java classname="org.tmatesoft.svn.cli.SVN" fork="true" failonerror="true">
+			<sysproperty key="svnkit.ssh.key" value="C:/id_dsa" />
+			<sysproperty key="svnkit.ssh.username" value="dproshkin_tckh" />
+			<!-- no passphrase on the key -->
+		      <arg value="-no-auth-cache" />
+		      <arg value="co" />
+		      <arg value="${repository.URL}" />
+		      <classpath>
+		          <pathelement location="../${jar.home}/ganymed.jar" />
+		          <pathelement location="../${jar.home}/svnkit.jar" />
+		          <pathelement location="../${jar.home}/svnkit-cli.jar" />
+		      </classpath>
+	    </java>
+
+		<svn javasvn="true">
+			<wcVersion path="../${core}/src" prefix="svn."/>
+        </svn>
+
+		<echo append="${file}/build.properties" file="${file}/build.properties" message= "Subversion repository url: ${wcVersion}" />
+			<!-- Creation jar-file "Core build.xml" -->
+				<target name="core-build.xml">
+					<ant antfile="build.xml" dir="../${core}" />
+				</target>		
+		</target>
+</project> 
+
+		

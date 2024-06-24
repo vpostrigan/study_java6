@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	/* *************************************************************************
+	* 22.07.2008
+	*
+	* (C) Eclipse SP LLC. All rights reserved
+	*
+	* Spring application context configuration.
+	* This is the ROOT context for the WEB application 
+	* 
+	* $Revision: 598 $
+	* $Author: akrumin_tckh $
+	* $Date: 2008-08-07 12:12:22 +0300 (Чт, 07 авг 2008) $
+	* **************************************************************************
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!--
+		Activates various annotations to be detected in bean classes: Spring's
+		@Required and @Autowired, as well as JSR 250's @PostConstruct,
+		@PreDestroy and @Resource (if available) and JPA's @PersistenceContext
+		and @PersistenceUnit (if available).
+	-->
+	<context:annotation-config />
+
+	<context:property-placeholder location="/WEB-INF/config/jdbc.properties, /WEB-INF/config/mail.properties"/>
+
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.host}" />
+		<property name="port" value="${mail.port}" />
+	</bean>
+	
+	<bean id="promtData"
+		class="com.eclipsesp.tplanner.web.bean.InvationMessageBean">
+		<property name="mainText" value="${mail.message}" />
+		<property name="regAddress" value="${mail.regAddress}" />
+	</bean>
+	
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>
+					com.eclipsesp.tplanner.web.messages.home
+				</value>
+				<value>
+					com.eclipsesp.tplanner.web.messages.error
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxActive" value="${jdbc.maxActive}" />
+		<property name="maxIdle" value="${jdbc.maxIdle}" />
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<property name="validationQuery"
+			value="${jdbc.validationQuery}" />
+	</bean>
+	
+	<bean id="databasePatcher" class="com.eclipsesp.tplanner.web.DatabasePatcher">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<aop:config>
+		<aop:advisor
+			pointcut="execution(* com.eclipsesp.tplanner.core.dao.I*Manager.*(..))"
+			advice-ref="txAdvice" />
+	</aop:config>
+
+	<tx:advice id="txAdvice">
+		<tx:attributes>
+			<tx:method name="insert*" />
+			<tx:method name="update*" />
+			<tx:method name="delete*" />
+			<tx:method name="grant*" />
+			<tx:method name="revoke*" />
+			<tx:method name="set*" />
+			<tx:method name="signup*" />
+			<tx:method name="add*" />
+			<tx:method name="remove*" />
+			<tx:method name="assign*" />
+			<tx:method name="clone*" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<bean id="accountJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.AccountJdbcDaoSupport" />
+	<bean id="accountManager" class="com.eclipsesp.tplanner.core.facade.impl.AccountManager" />
+	
+	<bean id="statusJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.StatusJdbcDaoSupport" />
+	<bean id="statusManager" class="com.eclipsesp.tplanner.core.facade.impl.StatusManager" />
+	
+	<bean id="gameUserJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.GameUserJdbcDaoSupport" />
+	<bean id="gameTeamJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.GameTeamJdbcDaoSupport" />
+	<bean id="gameManager" class="com.eclipsesp.tplanner.core.facade.impl.GameManager" />
+	
+	<bean id="stageJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.StageJdbcDaoSupport" />
+	<bean id="stageManager" class="com.eclipsesp.tplanner.core.facade.impl.StageManager" />
+	
+	<bean id="groupJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.GroupJdbcDaoSupport" />
+	<bean id="groupManager" class="com.eclipsesp.tplanner.core.facade.impl.GroupManager" />
+	
+	<bean id="promoJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.PromoJdbcDaoSupport" />
+	<bean id="promoManager" class="com.eclipsesp.tplanner.core.facade.impl.PromoManager" />
+	
+	<bean id="roleJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.RoleJdbcDaoSupport" />
+	<bean id="roleManager" class="com.eclipsesp.tplanner.core.facade.impl.RoleManager" />
+	
+	<bean id="teamJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.TeamJdbcDaoSupport" />
+	<bean id="teamManager" class="com.eclipsesp.tplanner.core.facade.impl.TeamManager" />
+    
+	<bean id="tournamentJDBC"	class="com.eclipsesp.tplanner.core.dao.jdbc.TournamentJdbcDaoSupport" />
+	<bean id="tournamentManager" class="com.eclipsesp.tplanner.core.facade.impl.TournamentManager" />
+	
+</beans>

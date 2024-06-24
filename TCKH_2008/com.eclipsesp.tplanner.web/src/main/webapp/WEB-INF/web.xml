@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	/* *************************************************************************
+	* 22.07.2008
+	*
+	* (C) Eclipse SP LLC. All rights reserved
+	*
+	* The main configuration file for the web application.
+	* 
+	* $Revision: 723 $
+	* $Author: akrumin_tckh $
+	* $Date: 2008-08-11 14:40:16 +0300 (Пн, 11 авг 2008) $
+	* **************************************************************************
+-->
+<web-app id="com.eclipsesp.tplanner.web" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>com.eclipsesp.tplanner.web</display-name>
+
+	<filter>
+		<filter-name>Charset Filter</filter-name>
+		<filter-class>
+			com.eclipsesp.tplanner.web.filter.CharsetFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Charset Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>Session Filter</filter-name>
+		<filter-class>
+			com.eclipsesp.tplanner.web.filter.SessionFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Session Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!--
+		Location of the XML file that defines the root application context.
+		Applied by ContextLoaderListener.
+	-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/config/application-context.xml
+		</param-value>
+	</context-param>
+
+	<!-- 
+		Sets the HTML escaping flag for all pages 
+	-->
+	<context-param>
+		<param-name>defaultHtmlEscape</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+	<!-- 
+		Sets unique key per application for Tomcat server 
+	-->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>tplannerRoot</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/config/log4j.properties</param-value>
+	</context-param>
+
+	<!--
+		Loads the root application context of this web app at startup,
+		by default from "/WEB-INF/applicationContext.xml".
+		Note that you need to fall back to Spring's ContextLoaderServlet for
+		J2EE servers that do not follow the Servlet 2.4 initialization order.
+		
+		Use WebApplicationContextUtils.getWebApplicationContext(servletContext)
+		to access it anywhere in the web application, outside of the framework.
+		
+		The root context is the parent of all servlet-specific contexts.
+		This means that its beans are automatically available in these child 
+		contexts, both for getBean(name) calls and (external) bean references.
+	-->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	
+	<!-- Log System listener -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	
+	<!-- Dispatcher for the PUBLIC part of the application, that manages
+		Nile's PUBLIC database
+	-->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>
+			com.eclipsesp.tplanner.web.TplannerDispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Mapping for the 'dispatcher' servlet -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/pages/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Captcha</servlet-name>
+		<!--<display-name>Captcha</display-name>-->
+		<servlet-class>nl.captcha.servlet.CaptchaServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Captcha</servlet-name>
+		<url-pattern>/pages/Captcha.jpg</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>./home.jsp</welcome-file>
+	</welcome-file-list>
+
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/pages/errors/500.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/pages/errors/404.jsp</location>
+	</error-page>
+	
+</web-app>

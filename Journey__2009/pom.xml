@@ -2,204 +2,204 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <!-- POM file generated with GWT webAppCreator -->
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.Journey__2009</groupId>
-  <artifactId>Journey__2009</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>Journey__2009</name>
+    <!-- POM file generated with GWT webAppCreator -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.Journey__2009</groupId>
+    <artifactId>Journey__2009</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Journey__2009</name>
 
-  <properties>
+    <properties>
 
-    <!-- Setting maven.compiler.source to something different to 1.8
-         needs that you configure the sourceLevel in gwt-maven-plugin since
-         GWT compiler 2.8 and above requires 1.8 (see gwt-maven-plugin block below) -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- Setting maven.compiler.source to something different to 1.8
+             needs that you configure the sourceLevel in gwt-maven-plugin since
+             GWT compiler 2.8 and above requires 1.8 (see gwt-maven-plugin block below) -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
-    <!-- Don't let your Mac use a crazy non-standard encoding -->
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
+        <!-- Don't let your Mac use a crazy non-standard encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
-  <dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <!-- ensure all GWT deps use the same version (unless overridden) -->
+            <dependency>
+                <groupId>org.gwtproject</groupId>
+                <artifactId>gwt</artifactId>
+                <version>2.11.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-      <!-- ensure all GWT deps use the same version (unless overridden) -->
-      <dependency>
-        <groupId>org.gwtproject</groupId>
-        <artifactId>gwt</artifactId>
-        <version>2.11.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-user</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.0.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.0.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.0.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.0.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.0.9.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>org.openrdf</artifactId>
+            <groupId>openrdf-sesame-onejar</groupId>
+            <version>2.2.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/openrdf-sesame-2.2.3-onejar.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hp.hpl.jena</groupId>
+            <artifactId>jena</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hp.hpl.jena</groupId>
+            <artifactId>arq</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hp.hpl.jena</groupId>
+            <artifactId>iri</artifactId>
+            <version>0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.49</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.jwebunit</groupId>
+            <artifactId>jwebunit-core</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+        </dependency>
     </dependencies>
-  </dependencyManagement>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.gwtproject</groupId>
-      <artifactId>gwt-servlet</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.gwtproject</groupId>
-      <artifactId>gwt-user</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.gwtproject</groupId>
-      <artifactId>gwt-dev</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
+    <build>
+        <!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" update them in DevMode -->
+        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>4.0.9.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>4.0.9.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>4.0.9.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>4.0.9.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>4.0.9.RELEASE</version>
-    </dependency>
+        <plugins>
 
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
+            <!-- GWT Maven Plugin-->
+            <plugin>
+                <groupId>net.ltgt.gwt.maven</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <moduleName>journey.gwt.SesameGWT</moduleName>
+                    <moduleShortName>journey</moduleShortName>
+                    <failOnError>true</failOnError>
+                    <!-- GWT compiler 2.8 and above requires 1.8, hence define sourceLevel here if you use
+                         a different source language for java compilation -->
+                    <sourceLevel>1.8</sourceLevel>
+                    <!-- Compiler configuration -->
+                    <compilerArgs>
+                        <!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
+                        <arg>-compileReport</arg>
+                        <arg>-XcompilerMetrics</arg>
+                    </compilerArgs>
+                    <!-- DevMode configuration -->
+                    <warDir>${project.build.directory}/${project.build.finalName}</warDir>
+                    <classpathScope>compile+runtime</classpathScope>
+                    <!-- URL(s) that should be opened by DevMode (gwt:devmode). -->
+                    <startupUrls>
+                        <startupUrl>journey.html</startupUrl>
+                    </startupUrls>
+                </configuration>
+            </plugin>
 
-    <dependency>
-      <artifactId>org.openrdf</artifactId>
-      <groupId>openrdf-sesame-onejar</groupId>
-      <version>2.2.3</version>
-      <scope>system</scope>
-      <systemPath>${basedir}/lib/openrdf-sesame-2.2.3-onejar.jar</systemPath>
-    </dependency>
+            <!-- Skip normal test execution, we use gwt:test instead -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
 
-    <dependency>
-      <groupId>com.hp.hpl.jena</groupId>
-      <artifactId>jena</artifactId>
-      <version>2.6.4</version>
-    </dependency>
-    <dependency>
-      <groupId>com.hp.hpl.jena</groupId>
-      <artifactId>arq</artifactId>
-      <version>2.6.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.hp.hpl.jena</groupId>
-      <artifactId>iri</artifactId>
-      <version>0.8</version>
-    </dependency>
-
-    <dependency>
-      <groupId>commons-dbcp</groupId>
-      <artifactId>commons-dbcp</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.49</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>net.sourceforge.jwebunit</groupId>
-      <artifactId>jwebunit-core</artifactId>
-      <version>1.5</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.4</version>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" update them in DevMode -->
-    <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
-
-    <plugins>
-
-      <!-- GWT Maven Plugin-->
-      <plugin>
-        <groupId>net.ltgt.gwt.maven</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <version>1.0.1</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>test</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <moduleName>journey.gwt.SesameGWT</moduleName>
-          <moduleShortName>journey</moduleShortName>
-          <failOnError>true</failOnError>
-          <!-- GWT compiler 2.8 and above requires 1.8, hence define sourceLevel here if you use
-               a different source language for java compilation -->
-          <sourceLevel>1.8</sourceLevel>
-          <!-- Compiler configuration -->
-          <compilerArgs>
-            <!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
-            <arg>-compileReport</arg>
-            <arg>-XcompilerMetrics</arg>
-          </compilerArgs>
-          <!-- DevMode configuration -->
-          <warDir>${project.build.directory}/${project.build.finalName}</warDir>
-          <classpathScope>compile+runtime</classpathScope>
-          <!-- URL(s) that should be opened by DevMode (gwt:devmode). -->
-          <startupUrls>
-            <startupUrl>journey.html</startupUrl>
-          </startupUrls>
-        </configuration>
-      </plugin>
-
-      <!-- Skip normal test execution, we use gwt:test instead -->
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.17</version>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
-    </plugins>
-  </build>
+        </plugins>
+    </build>
 </project>

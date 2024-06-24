@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_1_0.xsd"
+	version="1.0" >
+	
+<tlib-version>1.0</tlib-version>
+<jsp-version>1.0</jsp-version>
+<short-name>trnt</short-name>
+<!-- uri link it is for taglib in the JSP -->
+<uri>com.eclipsesp.tplanner.tags</uri>
+<description>Tournament planner custom tags</description>
+
+	<tag>
+		<name>logo</name>
+		<tag-class>com.eclipsesp.tplanner.web.tag.Logo</tag-class>
+		<body-content>empty</body-content>
+		<description>This tag writes a logotype inside the JSP</description>
+	
+		<attribute>
+			<name>image</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>The image name for the logo</description>
+		</attribute>
+
+		<attribute>
+			<name>width</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>The image width for the logo</description>
+		</attribute>	
+
+		<attribute>
+			<name>height</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>The image height for the logo</description>
+		</attribute>	
+	
+	</tag>
+	
+	<tag>
+		<name>loginMenu</name>
+		<tag-class>com.eclipsesp.tplanner.web.tag.LoginMenu</tag-class>
+		<body-content>empty</body-content>
+		<description>This tag creates login menu</description>
+	
+	</tag>
+	
+	<tag>
+		<name>pager</name>
+		<tag-class>com.eclipsesp.tplanner.web.tag.Pager</tag-class>
+		<body-content>empty</body-content>
+		<description>This tag writes a pager inside the JSP</description>
+	
+		<attribute>
+			<name>size</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>The size collection value for the collection view</description>
+		</attribute>
+		
+		<attribute>
+			<name>langPages</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Are used for localization of value of page</description>
+		</attribute>
+		
+		<attribute>
+			<name>langNext</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Are used for localization of value following</description>
+		</attribute>
+		
+		<attribute>
+			<name>langPrevious</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Are used for localization of value previous</description>
+		</attribute>
+		
+	</tag>
+	<tag>
+		<name>table</name>
+		<tag-class>com.eclipsesp.tplanner.web.tag.Table</tag-class>
+		<body-content>empty</body-content>
+		<description>This tag creates table</description>
+	
+		<attribute>
+			<name>tournamentView</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Collection is passed for displaying</description>
+		</attribute>
+	
+	</tag>
+	
+</taglib>

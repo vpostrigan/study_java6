@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+/*
+ * Tplanner
+ * author: Postrigan V.A
+ */
+ 
+body {
+	background-image: url('/com.eclipsesp.tplanner.web/images/unreal-tournament-3.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;			
+	background-attachment: fixed;
+}
+		
+div {
+	text-align: center;
+}
+		
+a {
+	font-family: verdana, tahoma, serif;
+	font-size: 16pt;
+	color: green;
+	text-decoration : underline;
+}
+
+a:hover{
+	font-family: verdana, tahoma, serif;
+	font-size: 16pt;
+	color: green;
+	text-decoration : underline;
+}

@@ -1,0 +1,158 @@
+# ******************************************************************************
+# * 22.07.2008
+# * 
+# * (C) Eclipse SP LLC. All rights reserved
+# * 
+# * This file contains russian resources for the home page
+# * 
+# * $Revision: 908 $
+# * $Author: vpostrigan_tckh $
+# * $Date: 2008-08-14 17:17:19 +0300 (Чт, 14 авг 2008) $
+# ******************************************************************************
+home.title=Домашняя страница
+tplanner.title=Планировщик турниров 
+
+button.Add=Добавить
+button.Delete=Удалить
+
+static.header.jsp.tplanner=Планировщик турниров v1.0 альфа
+static.header.jsp.createPlanPlay=СОЗДАВАЙ-ПЛАНИРУЙ-ИГРАЙ
+static.header.jsp.alpha=Альфа
+
+public=Публичный
+private=Частный
+
+myProfile.title=Мой профиль
+
+registration.title=Регистрация
+registration.eMail=Эл. почта
+registration.password=Пароль
+registration.passwordConfirm=Повторите пароль
+registration.nick=Ник
+registration.name=Имя
+registration.surname=Фамилия
+registration.city=Город
+registration.address=Адрес
+registration.zip=Индекс
+registration.captcha=Введите код показанный на рисунке
+registration.description=Описание
+registration.role_name=Права доступа
+registration.starmean=Поля помеченные * необходимы для заполнения.
+
+accountEdit.title=Изменение профайла
+account.accountDataInformation=Данные пользователя
+account.accountOwner=Владелец
+account.accountTakePart=Участвует/Участвовал
+account.pending=Приглашения в состоянии ожидания
+
+welcome=Добро пожаловать
+welcome.morning=Доброго утра
+welcome.day=Добрый день
+welcome.evening=Доброго вечера
+welcome.night=Доброй ночи
+
+login.title=Войти
+login.signIn=Войти
+login.signOut=Выйти
+login.signUp=Зарегистрироваться
+login.eMail=Эл. почта
+login.password=Пароль
+login.register=Зарегистрироваться
+
+users.title=Пользователи
+users.nick=Ник
+users.firstName=Имя
+users.lastName=Фамилия
+users.description=Описание
+
+tournament.title=Турниры
+tournament.gameKind=Тип игры
+tournament.owner=Владелец
+tournament.name=Имя
+tournament.startDate=Начальная дата
+tournament.finishDate=Конечная дата
+tournament.status=Статус
+tournament.visibility=Видимость
+tournament.description=Описание
+
+tournamentUsers.listOfTournaments=Список всех турниров
+tournamentUsers.userOfTournament=Пользователи турнира
+tournamentUsers.otherUsers=Остальные пользователи
+
+tournamentAdd.title=Добавить турнир
+tournamentAdd.addNew=Добавить новый турнир
+tournamentAdd.tournamentName=Название турнира
+tournamentAdd.gameKind=Тип игры
+tournamentAdd.startDate=Начальная дата
+tournamentAdd.finishDate=Конечная дата
+tournamentAdd.visibility=Видимость
+tournamentAdd.description=Описание
+
+tournamentEdit.title=Редактировать турнир
+tournamentEdit.tournamentName=Название турнира
+tournamentEdit.gameKind=Тип игры
+tournamentEdit.startDate=Начальная дата
+tournamentEdit.finishDate=Конечная дата
+tournamentEdit.visibility=Видимость
+tournamentEdit.description=Описание
+
+pager.next=Следующай
+pager.previous=Предыдущая
+pager.pages=Страницы
+
+error.title=Ошибки
+error.noRecords=Отсутствуют данные
+error.unknownError=Извините, произошла неизвестная ошибка. Наш специалист поможет вам решить эту проблему!
+
+errorPage.JSPException=JSP исключение
+errorPage.servletException=Servlet исключение
+errorPage.unidentifiedServerError=Неопределенная ошибка сервера
+errorPage.error404=Ошибка 404
+errorPage.error500=Ошибка 500
+errorPage.systemProblem=Ошибка в системе
+errorPage.problemType=Тип проблемы
+errorPage.problemDetails=Детали проблемы
+errorPage.causedBy=Ошибка вызвана
+errorPage.causedDetails=Детали ошибки
+errorPage.error404SystemProblem=Сервер не может найти запрашиваемый файл. Файл или был перемещен или удален, или был введен неправильный URL (адрес) или имя документа. Проверьте URL. Если проблема неустранима, пожалуйста свяжитесь с администраций.
+errorPage.error500SystemProblem=Произошла системная ошибка. Если проблема неустранима, пожалуйста свяжитесь с администраций.
+errorPage.showDetails=Показать детали...
+errorPage.hideDetails=Спрятать детали...
+errorPage.exceptionStackTrace=Stack trace исключения
+errorPage.causeStackTrace=Stack trace причины
+
+menu.news=Новости
+menu.users=Пользователи
+menu.tournaments=Турниры
+menu.releasenotes=Новшества
+
+mainmenu.mytournaments=Мои турниры
+mainmenu.myinvites=Мои приглашения
+mainmenu.myschedule=Моё расписание
+mainmenu.mydetails=Мои детали
+
+menu.signin=Войти
+menu.signup=Зарегистрироватся
+menu.signout=Выйти
+
+promo.title=Посылка приглашения
+promo.ownerEmail=Ваш e-mail
+promo.email=Адрес человека которому вы хотите отправить приглашение. </br>Для посылки на более чем один адресат разделите адреса символом - ";"
+
+manage.title=Manage roles here. Do not use changing by database managing.
+manage.roleName=Role name
+manage.accessToUsers=Access to users
+manage.accessToTournaments=Access to tournaments
+manage.canNothing=Can nothing
+manage.canReadSelf=Can read self
+manage.canReadAll=Can read All
+manage.canWriteSelf=Can write self
+manage.canWriteAll=Can write all
+manage.canReadAllWriteSelf=Simple user permission
+
+invites.accept=Принять
+invites.reject=Отказать
+
+footer.feedBack=Обратная связь
+footer.privacy=Приватная информация
+footer.contact=Контактная информация

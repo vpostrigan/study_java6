@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!-- 
+	Updating database `tplanner` (application of a patch)
+	
+	@author vpostrigan
+ --> 
+
+<project name="updateDB" default="update">	
+	
+	<!-- Properties -->
+	<property name="dropTables.sql" value="${db.sql.script.directory}/dropTables.sql" />
+	<property name="createTables.sql" value="${db.sql.script.directory}/createTables.sql" />
+	<property name="initTables.sql" value="${db.sql.script.directory}/initTables.sql" />
+	
+	<!-- Build classpath -->
+	<path id="classpath">		
+		<fileset dir="../lib">
+			<include name="**/mysql*.jar"/>
+		</fileset>
+	</path>
+	
+	<!-- Applying patch -->  
+	<target name="update" depends="dropTables, createTables, initTables" />
+					
+	<!-- Dropping tables -->  
+	<target name="dropTables">
+		<echo message="Dropping tables using: ${db.user} ${db.url}" />
+		
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue">
+			<classpath refid="classpath"/>
+			<transaction src="${dropTables.sql}" />
+		</sql>
+	</target>
+	
+	<!-- Creating tables -->  
+	<target name="createTables">
+		<echo message="Creating tables using: ${db.user} ${db.url}" />
+		
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue">
+			<classpath refid="classpath"/>
+			<transaction src="${createTables.sql}" />
+		</sql>
+	</target>
+	
+	<!-- Initialization tables -->  
+	<target name="initTables">
+		<echo message="Initialization tables using: ${db.user} ${db.url}" />
+		
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue">
+			<classpath refid="classpath"/>
+			<transaction src="${initTables.sql}" />
+		</sql>
+	</target>	
+</project>

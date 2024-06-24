@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!-- 
+	Creation tplanner-core.jar
+	
+	@author vpostrigan
+ --> 
+
+<project name="tplanner" default="createJar" basedir=".">	
+	
+	<!-- Properties -->
+	<property name="build" value="build" />
+	<property name="jar.home" value="build/jar" />
+	<property name="jar.name" value="tplanner-core.jar" />
+	
+	<!-- Build classpath -->
+	<path id="classpath">
+		<fileset dir="lib">
+	    	<include name="**/*.jar"/>
+	    </fileset>
+		<fileset dir="lib-ant">
+	    	<include name="**/*.jar"/>
+	    </fileset>
+		<fileset dir="lib-test">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<!-- Creation jar-file -->
+	<target name="createJar" depends="compile">
+		<jar destfile="${jar.home}/${jar.name}" basedir="build" />
+	</target>
+	
+	<!-- Compiles the source code -->
+	<target name="compile" depends="prepare">
+		<javac srcdir="src" destdir="${build}" debug="on" 
+				deprecation="on" optimize="off" includes="**">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	
+	<!-- Prepares the build directory -->
+	<target name="prepare" depends="clean">		
+		<mkdir dir="${build}" />
+		<mkdir dir="${jar.home}" />
+	</target>
+	
+	<!-- Cleans up generated stuff -->
+	<target name="clean">
+		<delete dir="${build}/" />
+	</target>
+	
+</project>
