@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.opencms.org/dtd/6.0/xmlpage.xsd">
+  <page language="en">
+    <element name="body">
+      <links/>
+      <content><![CDATA[<p><b>Server encountered an internal error.</b></p>
+<p>Error report has been sent to site administration. Sorry for this inconvenience.</p>
+<p>Please, start your navigation from the:</p>]]></content>
+    </element>
+  </page>
+</pages>

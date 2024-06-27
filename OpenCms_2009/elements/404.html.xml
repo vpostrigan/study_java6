@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.opencms.org/dtd/6.0/xmlpage.xsd">
+  <page language="en">
+    <element name="body">
+      <links/>
+      <content><![CDATA[<p><b>Unfortunately the page you have requested cannot be found.</b></p>
+<p>If you got to this page from your bookmarks, please update them.</p>
+<p>Continue your work from: </p>]]></content>
+    </element>
+  </page>
+</pages>
